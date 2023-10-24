@@ -34,10 +34,8 @@ a {
 header {
     width: 100%;
     height: auto;
-    /* padding: 5px; */
 }
 header .header-top {
-    /* padding: 0 10px; */
     height: 50px;
     line-height: 50px;
     overflow: hidden;
@@ -185,18 +183,25 @@ nav .container .row .col-8 > ul > .dropdowne .dropdown-menue li a {
         border: none;
         color: var(--mainColor);
         position: absolute;
-        top: 20px;
+        top: 10px;
         right: 50px;
+        padding: 5px 10px;
+        border: 2px solid var(--mainColor);
         font-size: 30px;
         transition: color 0.5s;
         -webkit-transition: color 0.5s;
         -moz-transition: color 0.5s;
         -ms-transition: color 0.5s;
         -o-transition: color 0.5s;
-}
-nav .bttn:hover {
-    color: var(--btnColor);
-}
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    nav .bttn:hover {
+        color: var(--btnColor);
+    }
     nav ul {
         display: none;
     }
@@ -367,7 +372,7 @@ nav .bttn:hover {
 .home {
     background-image: url(../images/home.jpg.webp);
     width: 100%;
-    height: 100vh;
+    height: 512px;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -414,6 +419,63 @@ nav .bttn:hover {
     color: var(--mainColor);
     background-color: var(--white);
 }
+.home button {
+    width: 55px;
+    height: 55px;
+    font-size: 19px;
+    border: 3px solid var(--mainColor);
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: fixed;
+    right: -70px;
+    bottom: 40px;
+    cursor: pointer;
+    z-index: 20;
+    animation: top 2s ease-in-out infinite;
+    -webkit-animation: top 2s ease-in-out infinite;
+    transition: right 0.5s , background-color 0.5s;
+    -webkit-transition: right 0.5s , background-color 0.5s;
+    -moz-transition: right 0.5s , background-color 0.5s;
+    -ms-transition: right 0.5s , background-color 0.5s;
+    -o-transition: right 0.5s , background-color 0.5s;
+}
+@keyframes top {
+    0%, 10%, 20%, 50%, 80%, 100% {
+        transform: translate(0px,0);
+        -webkit-transform: translate(0px,0);
+        -moz-transform: translate(0px,0);
+        -ms-transform: translate(0px,0);
+        -o-transform: translate(0px,0);
+    }
+    40%, 60% {
+        transform: translate(0px,-15px);
+        -webkit-transform: translate(0px,-15px);
+        -moz-transform: translate(0px,-15px);
+        -ms-transform: translate(0px,-15px);
+        -o-transform: translate(0px,-15px);
+    }
+}
+.home button:hover {
+    background-color: var(--white);
+}
+.home button a {
+    color: var(--white);
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+.home button:hover a {
+    color: var(--mainColor);
+}
+.home button.show {
+    right: 10px;
+}
 @media only screen and (max-width : 500px) {
     .home .layer {
         left: 25px;
@@ -426,46 +488,43 @@ nav .bttn:hover {
     .home .layer p {
         font-size: 13px;
         margin-bottom: 15px;
-        /* padding: 10px; */
+    }
+}
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .home .layer {
+        left: 25px;
+        padding: 10px;
+    }
+    .home .layer h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .home .layer p {
+        font-size: 13px;
+        margin-bottom: 15px;
     }
 }
 /* End CSS to Home Section */
 
 /* Start CSS to Category Section */
-.category,
-.about ,
-.feedback,
-.offer ,
-.blog {
+.category, .about , .feedback, .offer , .blog {
     padding: 30px 0;
     overflow: hidden;
     text-align: center;
     margin-bottom: 30px;
 }
-.category .top ,
-.feedback .top,
-.offer .top ,
-.blog .top {
+.category .top , .feedback .top, .offer .top , .blog .top {
     text-align: center;
 }
-.category .top h2  ,
-.feedback .top h2 ,
-.offer .top h2 ,
-.blog .top h2 {
+.category .top h2  , .feedback .top h2 , .offer .top h2 , .blog .top h2 {
     font-weight: 600;
     font-size: 40px;
     margin-bottom: 20px;
 }
-.category .top p ,
-.feedback .top p ,
-.offer .top p ,
-.blog .top p{
+.category .top p , .feedback .top p , .offer .top p , .blog .top p{
     color: var(--gray);
 }
-.category .row ,
-.feedback.row ,
-.offer .row ,
-.blog .row {
+.category .row , .feedback.row , .offer .row , .blog .row {
     margin: 20px 0;
 }
 .category .box {
@@ -534,39 +593,80 @@ nav .bttn:hover {
     background-color: var(--white);
 }
 @media only screen and (max-width : 500px) {
-.category,
-.about ,
-.feedback,
-.offer ,
-.blog {
-    padding: 10px 0;
-    margin-bottom: 10px;
+    .category, .about , .feedback, .offer , .blog {
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    .category .top h2  , .offer .top h2 , .blog .top h2 {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+    .category .top p  , .offer .top p , .blog .top p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    .category .row , .feedback.row , .offer .row , .blog .row {
+        margin: 10px 0;
+    }
+    .category .box .img .overlay {
+        top: 26px;
+        left: 25px;
+    }
+    .category .box .img .overlay h3 {
+        font-size: 16px;
+    }
 }
-.category .top h2  ,
-.offer .top h2 ,
-.blog .top h2 {
-    font-size: 22px;
-    margin-bottom: 7px;
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .category, .about , .feedback, .offer , .blog {
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    .category .top h2  , .offer .top h2 , .blog .top h2 {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+    .category .top p  , .offer .top p , .blog .top p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    .category .row , .feedback.row , .offer .row , .blog .row {
+        margin: 10px 0;
+    }
+    .category .box .img .overlay {
+        top: 35px;
+        left: 36px;
+    }
+    .category .box .img .overlay h3 {
+        font-size: 16px;
+    }
 }
-.category .top p  ,
-.offer .top p ,
-.blog .top p {
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-.category .row ,
-.feedback.row ,
-.offer .row ,
-.blog .row {
-    margin: 10px 0;
-}
-.category .box .img .overlay {
-    top: 18px;
-    left: 17px;
-}
-.category .box .img .overlay h3 {
-    font-size: 14px;
-}
+@media only screen and (min-width:768px) and (max-width : 991px) {
+    .category, .about , .feedback, .offer , .blog {
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+    .category .top h2  , .offer .top h2 , .blog .top h2 {
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+    .category .top p  , .offer .top p , .blog .top p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    } 
+    .category .row , .feedback.row , .offer .row , .blog .row {
+        margin: 10px 0;
+    }
+    .category .box .img .overlay {
+        top: 24px;
+        left: 22px;
+    }
+    .category .col-lg-4:last-child .box .img .overlay {
+        top: 45px;
+        left: 49px;
+    }
+    .category .box .img .overlay h3 {
+        font-size: 14px;
+    }
 }
 /* End CSS to Category Section */
 
@@ -593,11 +693,36 @@ nav .bttn:hover {
     margin-bottom: 15px;
 }
 .about .box {
-    /* height: 100px; */
     border: 2px solid var(--nav);
     margin-bottom: 20px;
     text-align: left;
     padding: 22px;
+    position: relative;
+    cursor: pointer;
+}
+.about .box::before , .about .box::after {
+    content: "";
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+}
+.about .box::after {
+    bottom: 0;
+    left: 1px;
+    border-right: 3px solid var(--mainColor);
+}
+.about .box::before {
+    top: 0;
+    left: -1px;
+    border-left: 3px solid var(--mainColor);
+}
+.about .box:hover:before , .about .box:hover::after {
+    height: 100%;
 }
 .about .box i {
     font-size: 25px;
@@ -607,6 +732,7 @@ nav .bttn:hover {
 .about .box span {
     display: block;
     margin-bottom: 7px;
+    font-size: 22px;
 }
 .about .box p {
     margin-bottom: 5px;
@@ -621,15 +747,36 @@ nav .bttn:hover {
         margin-bottom: 10px;
     }
 }
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .about .top {
+        padding: 20px 10px;
+    }
+    .about .top h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
+    .about .top {
+        padding: 20px 10px;
+    }
+    .about .top h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .about .top p {
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+}
 /* End CSS to About Section */
 
 /* Start CSS to Feedback Section */
 .feedback {
     background-color: var(--lightGray);
 }
-.feedback .top p ,
-.offer .top p ,
-.blog .top p {
+.feedback .top p , .offer .top p , .blog .top p {
     margin-bottom: 30px;
 }
 .feedback img {
@@ -637,7 +784,7 @@ nav .bttn:hover {
 }
 .feedback .layer {
     text-align: left;
-    padding: 30px 0;
+    padding: 110px 0;
 }
 .feedback .layer h4 {
     font-size: 20px;
@@ -657,17 +804,53 @@ nav .bttn:hover {
     color: var(--gray);
 }
 @media only screen and (max-width : 500px) {
-    .feedback .top p ,
-    .offer .top p ,
-    .blog .top p {
+    .feedback .top h2 {
+        font-size: 20px;
+        margin-bottom: 7px;
+    }
+    .feedback .top p , .offer .top p , .blog .top p {
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+    .feedback .layer {
+        padding: 20px 40px;
+    }
+    .feedback .layer h4 {
+        font-size: 18px;
+    }
+    .feedback .layer i {
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .feedback .top h2 {
+        font-size: 20px;
+        margin-bottom: 7px;
+    }
+    .feedback .top p , .offer .top p , .blog .top p {
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+    .feedback .layer {
+        padding: 20px 40px;
+    }
+    .feedback .layer h4 {
+        font-size: 18px;
+    }
+    .feedback .layer i {
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
+    .feedback .top p , .offer .top p , .blog .top p {
         margin-bottom: 15px;
     }
     .feedback .top h2 {
-        font-size: 18px;
-        margin-bottom: 7px;
+        font-size: 22px;
+        margin-bottom: 10px;
     }
     .feedback .layer {
-        padding: 20px 10px;
+        padding: 70px 10px;
     }
     .feedback .layer h4 {
         font-size: 18px;
@@ -740,6 +923,16 @@ nav .bttn:hover {
         padding: 20px 12px;
     }
 }
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .offer .box {
+        padding: 20px 12px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
+    .offer .box {
+        padding: 30px 12px;
+    }
+}
 /* End CSS to Offer Section */
 
 /* Start CSS to Book Section */
@@ -789,8 +982,7 @@ nav .bttn:hover {
     margin-bottom: 20px;
     text-align: center;
 }
-.book .content form input,
-.book .content form textarea {
+.book .content form input, .book .content form textarea {
     display: block;
     margin-bottom: 10px;
     width: 100%;
@@ -819,6 +1011,48 @@ nav .bttn:hover {
     }
     .book .content h3 {
         font-size: 20px;
+    }
+}
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .book {
+        padding: 5px 0;
+        margin-bottom: 10px;
+    }
+    .book .box {
+        padding: 5px 20px;
+    }
+    .book .box h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .book .box .item span {
+        font-size: 13px;
+    }
+    .book .content h3 {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
+    .book {
+        padding: 5px 0;
+        margin-bottom: 10px;
+    }
+    .book .box {
+        padding: 5px 20px;
+    }
+    .book .box h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .book .box p {
+        font-size: 18px;
+        letter-spacing: 0.7px;
+    }
+    .book .box .item span {
+        font-size: 17px;
+    }
+    .book .content h3 {
+        font-size: 25px;
     }
 }
 /* End CSS to Book Section */
@@ -877,6 +1111,42 @@ nav .bttn:hover {
     margin-right: 5px;
 }
 @media only screen and (max-width : 500px) {
+    .blog .box {
+        text-align: center;
+    }
+    .blog .box .img {
+        margin-bottom: 20px;
+    }
+    .blog .box h4 {
+        margin-bottom: 5px;
+    }
+    .blog .box p {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .blog .box .info {
+        margin-bottom: 25px;
+    }
+}
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    .blog .box {
+        text-align: center;
+    }
+    .blog .box .img {
+        margin-bottom: 20px;
+    }
+    .blog .box h4 {
+        margin-bottom: 5px;
+    }
+    .blog .box p {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .blog .box .info {
+        margin-bottom: 25px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
     .blog .box .img {
         margin-bottom: 15px;
     }
@@ -884,10 +1154,18 @@ nav .bttn:hover {
         margin-bottom: 5px;
     }
     .blog .box p {
-        margin-bottom: 5px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .blog .col-lg-4:last-child .box {
+        text-align: center;
+    }
+    .blog .col-lg-4:last-child .box p {
+        font-size: 16px;
+        letter-spacing: 1px;
     }
     .blog .box .info {
-        margin-bottom: 25px;
+        margin-bottom: 28px;
     }
 }
 /* End CSS to Blog Section */
@@ -911,14 +1189,15 @@ footer ul li {
     margin-bottom: 15px;
     font-size: 15px;
     cursor: pointer;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    -ms-transition: color 0.5s;
-    -o-transition: color 0.5s;
+    transition: color 0.5s , margin-left 0.5s;
+    -webkit-transition: color 0.5s , margin-left 0.5s;
+    -moz-transition: color 0.5s , margin-left 0.5s;
+    -ms-transition: color 0.5s , margin-left 0.5s;
+    -o-transition: color 0.5s , margin-left 0.5s;
 }
 footer ul li:hover {
     color: var(--mainColor);
+    margin-left: 10px;
 }
 footer .tel li {
     color: var(--white);
@@ -974,8 +1253,7 @@ footer form a:hover {
 footer .desc {
     font-size: 16px;
 }
-footer .desc i,
-footer .desc span {
+footer .desc i, footer .desc span {
     color: var(--mainColor);
 }
 footer .media {
@@ -1004,6 +1282,70 @@ footer .media li:hover a {
     background-color: var(--mainColor);
 }
 @media only screen and (max-width : 500px) {
+    footer {
+        padding: 50px 20px;
+    }
+    footer .row {
+        margin-bottom: 5px;
+    }
+    footer h3 {
+        margin: 15px 0 10px 0;
+    }
+    footer ul li {
+        margin-bottom: 10px;
+    }
+    footer p {
+        margin-bottom: 15px;
+    }
+    footer form input {
+        width: 210px;
+        height: 40px;
+        padding: 0 20px;
+    }
+    footer form a {
+        width: 200px;
+    }
+    footer .desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    footer .media {
+        padding: 0 80px;
+    }
+}
+@media only screen and (min-width : 501px) and (max-width : 767px) {
+    footer {
+        padding: 50px 20px;
+    }
+    footer .row {
+        margin-bottom: 5px;
+    }
+    footer h3 {
+        margin: 15px 0 10px 0;
+    }
+    footer ul li {
+        margin-bottom: 10px;
+    }
+    footer p {
+        margin-bottom: 15px;
+    }
+    footer form input {
+        width: 210px;
+        height: 40px;
+        padding: 0 20px;
+    }
+    footer form a {
+        width: 200px;
+    }
+    footer .desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    footer .media {
+        padding: 0 150px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width : 991px) {
     footer {
         padding: 50px 20px;
     }
